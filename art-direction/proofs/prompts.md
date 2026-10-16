@@ -1,0 +1,19 @@
+# Built-in image-generation prompts
+
+All three selected PNG drafts were made with the built-in `image_gen` tool. The supplied moodboard was the reference for the character master and table image; the curious draft was the edit target for the overwhelmed expression.
+
+## Curious bride draft
+
+> Use case: stylized-concept. Production asset: ONE isolated bridal character sprite with alpha transparency. Reference image is the approved style and identity source: recreate the seated bride in the center, preserving her recognizable large expressive brown eyes, childlike-soft face proportions, upward thoughtful gaze, long flowing dark-brown hair, South Asian warm-brown skin, gold maang tikka, earrings and bangles, ornate ivory-and-gold lehenga and trailing dupatta. Keep the chin-in-hands seated pose and complete lower dress and feet. Draw only the solid illustrated figure and her garments. Canvas outside the exact silhouette must have alpha=0, entirely transparent. NO ambient scene, NO backdrop, NO brown glow, NO vignette, NO ground, NO shadow, NO photographic lighting halo, NO cards, NO flowers, NO text. Crisp antialiased contour suitable for placing on a warm ivory webpage. Center the isolated figure in a 3:2 landscape canvas. Do not reproduce the whole flattened website mockup.
+
+## Overwhelmed expression draft
+
+> Use case: identity-preserve. Edit target: the supplied isolated seated Tashkeel bride draft. Create the overwhelmed expression frame of EXACTLY THE SAME CHARACTER at EXACTLY THE SAME PIXEL ALIGNMENT AND POSE. Change ONLY the small facial expression: lift and knit the inner eyebrows slightly, widen the brown eyes a touch, let the mouth part very subtly as if weighing many wedding decisions. Keep her face identity and age impression identical. Do not alter the eye direction, head angle, hands, arms, hair, jewelry, outfit, embroidered patterns, dupatta, skirt silhouette, feet, scale, lighting, camera or canvas. No extra props or text. Canvas outside the figure must be fully transparent; remove the brown background halo and shadow entirely. This is an expression swap frame, not a new illustration.
+
+## Inspiration card draft
+
+> Use case: stylized-concept. Asset type: a single 4:5 portrait image for a small, independently floating wedding inspiration card in the Tashkeel Atelier hero. Input image: the supplied moodboard is a reference for palette and South Asian wedding atelier atmosphere, not a layout to copy. Show only a conceptual close-up vignette of ivory and blush wedding table styling: draped blush fabric, small floral arrangement in soft ivory and muted marigold, warm brass details, gentle cinematic daylight. Premium tactile editorial illustration with subtle 2.5D softness, consistent with the supplied moodboard. Tight vertical composition readable at small card size. No people, no words, no logo, no frame, no Polaroid border, no mockup, no actual client event or venue implied. This is design inspiration artwork, not portfolio photography.
+
+## Seating card draft
+
+> Use case: stylized-concept. Asset type: second 4:5 portrait image for a small independently floating wedding inspiration card in Tashkeel Atelier's hero. The supplied moodboard is the reference for the antique brass, blush, warm ivory palette and premium South Asian atelier atmosphere; do not reproduce the website layout. Show a conceptual wedding seating vignette: low upholstered seating in warm ivory and muted blush, layered draped fabric, small floral clusters, slender brass details, softly lit courtyard feeling, editorial 2.5D illustration with tactile detail. Intentionally different from the close-up tabletop card. Tight vertical crop readable at small size. No people, no words, no logo, no frame or border, no identifiable venue, no claim of a real wedding or client event. This is an inspiration study, not portfolio photography.

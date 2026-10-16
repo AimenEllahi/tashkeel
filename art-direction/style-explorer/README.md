@@ -1,0 +1,15 @@
+# Style-explorer illustrations
+
+These are conceptual inspiration illustrations, not client-event photographs. The built-in image-generation tool made one asset per direction, each using `art-direction/character-reference/bridal-moodboard-dream.png` as the style reference and `transparent_background: false`. Selected source PNGs remain here. Website exports in `public/assets/images/styles/` are 720 × 900 WebP files at quality 78, approximately 108–160 KB each, and load lazily.
+
+## Old-School Pakistani Charm
+
+> Create a single vertical editorial illustration asset for Tashkeel Atelier's style explorer, inspired by the supplied moodboard's premium soft 2.5D finish and warm Pakistani wedding atelier sensibility. Direction: OLD-SCHOOL PAKISTANI CHARM. A nostalgic Lahore courtyard wedding vignette with dense marigold garlands, gajray, aged brass vessels and lamps, traditional patterned textiles, warm late-afternoon amber light, richly tactile but sophisticated. No people, no bride, no signage, no letters, no logo, no card border, no website interface, no collage. Compose as a self-contained 4:5 portrait illustration with clear central subject and fine craft detail, ready to crop into an interactive editorial art card. Avoid generic stock-photo realism and excessive sparkle.
+
+## Contemporary Romance
+
+> Create ONE vertical editorial illustration asset for Tashkeel Atelier's interactive wedding style explorer, matching the supplied moodboard's premium soft 2.5D finish and South Asian wedding atelier context. Direction: CONTEMPORARY ROMANCE. An intimate modern Pakistani wedding tablescape in a serene courtyard: sculptural ivory florals with blush accents, elegant low seating, restrained antique brass, gently draped ivory textiles, luminous soft daylight, carefully composed negative space. Tactile and painterly, warm rather than sterile. No people, no bride, no typography, no labels, no logo, no card border, no website mockup or collage. Self-contained 4:5 portrait asset, clear central visual read at small card size, crafted details rather than generic stock photography. Avoid saturated orange marigolds, excessive sparkle, or fantasy architecture.
+
+## A Little of Both
+
+> Create ONE vertical editorial illustration asset for Tashkeel Atelier's interactive wedding style explorer, matching the supplied moodboard's premium soft 2.5D finish and a contemporary Lahore wedding atelier. Direction: A LITTLE OF BOTH, a carefully curated meeting of Pakistani wedding heritage and contemporary romance. A charming courtyard seating vignette with a restrained cluster of marigold and gajra beside sculptural ivory-blush flowers, vintage brass lamps, burgundy and blush woven cushions, airy ivory drapes, modern clean table styling, golden late-afternoon light. Balanced fusion, tactile, sophisticated and warm. No people, no bride, no text, no logo, no card border, no interface, no collage, no client-event claim. Self-contained 4:5 portrait composition with distinct visual read at small size. Avoid generic stock photography, crowded festival decoration, and glitter.

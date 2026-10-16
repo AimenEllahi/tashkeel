@@ -1,0 +1,15 @@
+# Standing bride — current hero master
+
+The current hero uses [`pose-01-cutout.png`](pose-01-cutout.png), exported as [`bride-standing-v2.webp`](../../../public/assets/images/characters/bride-standing-v2.webp). The approved [standing moodboard](../../character-reference/bridal-moodboard-dream.png) is the visual reference for her face, outfit, pose, and scale. It is not a website background. The original generated file is retained as [`pose-01-source.png`](pose-01-source.png), and Apple Vision foreground masking produced the clean transparent cutout. The WebP is 900 px wide and approximately 342 KB.
+
+The built-in `image_gen` tool used the standing moodboard as a **reference image** with `transparent_background: true` and this prompt:
+
+> Create ONE production-ready isolated character illustration using the supplied moodboard as the approved character reference, not as a composition to copy. Subject: the SAME young adult South Asian bride at center of the reference, standing front-facing in the same thoughtful pose, one hand gently touching her chin and the other arm holding a few small inspiration papers close to her torso. Preserve her appealing expressive large brown eyes, warm medium brown skin, long voluminous dark wavy hair, delicate gold maang tikka and earrings, bangles, ivory-and-gold heavily embroidered lehenga, sheer gold-trimmed dupatta, and lavish wide skirt spreading out at the hem. Premium soft 3D / 2.5D storybook illustration with the reference's facial proportions and warm sophisticated playful expression; clear, beautifully rendered embroidery and natural hands. Full body including the entire skirt and dupatta; generous transparent margin around the silhouette; absolutely no cropped hair, train, veil or skirt. Transparent alpha background. No scene, floor, cast shadow, room, photo cards, floating objects, flowers, typography, logos, extra people, duplicate limbs, or border. This output will be the independent hero character cutout, so maintain a coherent, clean silhouette.
+
+## Registered expressions
+
+The curious base now has four registered face overlays: overwhelmed, thinking, delighted, and relaxed. [The comparison sheet](expression-comparison.png) shows all five states. Exact generation prompts are in [expression-prompts.md](expression-prompts.md).
+
+`compose-standing-expression.mjs` masks the inner facial region of each generated variant. Only that region is blended onto the canonical PNG; all visible pixels outside the face are checked for exact equality by `build-standing-sheet.mjs`. The optimized face overlays share the base export's 900 × 1350 transparent canvas and are approximately 10 KB each. The website reuses the same full bride image for every reaction, loading only the requested small face layer.
+
+Tapping or keyboard-activating a hero object selects a supported expression. After a style direction is chosen, the bride appears relaxed when revisited. These are discrete expression frames: independent blinking, continuous gaze tracking, arm gestures, and dupatta movement still need additional registered artwork. Do not mix the earlier seated exports into this standing state map.
