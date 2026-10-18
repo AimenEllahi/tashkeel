@@ -70,11 +70,14 @@ The Playwright CLI skill's wrapper runs the browser checks against the productio
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh open http://localhost:3002
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-site.js
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-navigation.js
+bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-all-links.js
+bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-mobile-flows.js
+bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-garden-variants.js
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-motion.js
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-board-motion.js
 ```
 
-The checks exercise continuous hero floating, scroll-linked moodboard settling and detail selection, style summaries, guided studio lighting, scene choices, every navigation link on desktop and mobile, form validation, draft contents, stale-draft handling, keyboard entry, responsive widths, and image loading. No inquiry is sent. The performance check uses a throttled local Chromium production preview; it is a diagnostic rather than a field Core Web Vitals score.
+The checks exercise continuous hero floating, scroll-linked moodboard settling and detail selection, style summaries, all 27 garden artwork combinations, all internal links, complete mobile interactions and touch targets, form validation, draft contents, stale-draft handling, keyboard entry, responsive widths, and image loading. No inquiry is sent. The performance check uses a throttled local Chromium production preview; it is a diagnostic rather than a field Core Web Vitals score.
 
 ## Content and launch handoff
 

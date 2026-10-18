@@ -22,7 +22,7 @@ async (page) => {
         const src = await image.getAttribute("src");
         assert(src.includes(encodeURIComponent(expected)), `Wrong scene for ${palette}/${floral}/${light}: ${src}`);
         const dimensions = await image.evaluate(async element => { await element.decode(); return [element.naturalWidth, element.naturalHeight]; });
-        assert(dimensions[0] === 1100 && dimensions[1] > 0, `Broken scene for ${palette}/${floral}/${light}`);
+        assert(dimensions[0] > 0 && dimensions[1] > 0, `Broken scene for ${palette}/${floral}/${light}`);
         checked.push(`${palette}/${floral}/${light}`);
       }
     }

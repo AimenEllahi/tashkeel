@@ -56,6 +56,21 @@ export function IdeasToPlan() {
     return () => { disposed = true; cleanup?.(); };
   }, []);
 
+  useEffect(() => {
+    if (!selectedIdea) return;
+    const note = boardRef.current?.querySelector<HTMLElement>(".board-piece-feedback");
+    if (!note) return;
+    const frame = requestAnimationFrame(() => {
+      const bounds = note.getBoundingClientRect();
+      if (bounds.top >= 88 && bounds.bottom <= window.innerHeight - 16) return;
+      note.scrollIntoView({
+        block: "nearest",
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+      });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [selectedIdea]);
+
   return (
     <section id="atelier-stage" className="ideas-section scene-section" aria-labelledby="ideas-heading">
       <Container className="ideas-layout">
@@ -66,19 +81,20 @@ export function IdeasToPlan() {
           <a className="text-link" href="#your-style">Find your direction <span aria-hidden="true">↗</span></a>
         </div>
         <div className="plan-board-shell">
-          <p className="board-instruction">Explore a detail <span aria-hidden="true">↗</span></p>
+          <p className="board-instruction">Select an object on the board</p>
           <div ref={boardRef} className="plan-board" role="group" aria-label="Explore the wedding inspiration moodboard">
             <div className="plan-board-inner">
               {pieces.map((piece) => <button key={piece.id} type="button" className={`board-piece ${piece.className}`} data-board-motion data-start-x={piece.motion.x} data-start-y={piece.motion.y} data-start-rotation={piece.motion.rotation} data-picked={selectedIdea === piece.id} aria-label={`Explore ${piece.alt}`} aria-pressed={selectedIdea === piece.id} onClick={() => setSelectedIdea((current) => current === piece.id ? null : piece.id)}>
                 <span className="board-piece-surface">
                   <Image src={piece.src} alt="" fill sizes="(min-width: 900px) 180px, 28vw" className="object-contain" />
                 </span>
+                {selectedIdea === piece.id && <span className="board-piece-feedback" aria-hidden="true">{piece.decision}</span>}
               </button>)}
               <div className="board-note"><span data-board-motion data-start-x="-14" data-start-y="19" data-start-rotation="-6">A clearer picture<br /><small>of your celebration</small></span></div>
               <div className="board-stamp" aria-hidden="true">T / A</div>
             </div>
           </div>
-          <p className="board-caption" aria-live="polite">{selected?.decision ?? "Choose a detail to see where it could lead."}</p>
+          <p className="board-caption sr-only" aria-live="polite">{selected?.decision ?? "Each detail is a starting point."}</p>
         </div>
       </Container>
     </section>
