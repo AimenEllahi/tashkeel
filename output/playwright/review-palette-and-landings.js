@@ -20,12 +20,13 @@ async (page) => {
   const variations = [];
   for (const [name, palette, materials] of [["Ivory & blush", "ivory-blush", ["Ivory", "Blush", "Antique brass"]], ["Marigold & burgundy", "marigold-burgundy", ["Burgundy", "Marigold", "Antique brass"]], ["Olive & antique gold", "olive-gold", ["Olive", "Ivory", "Antique gold"]]]) {
     await page.getByRole("button", { name, exact: true }).click();
+    const imagePath = `/assets/images/garden/daylight-romantic${palette === "ivory-blush" ? "" : `-${palette}`}.webp`;
+    await page.locator(`.studio-art-frame[data-scene='${imagePath}']`).waitFor();
     assert(await page.locator(".studio-art-frame").getAttribute("data-palette") === palette, `Palette ${name} did not reach the scene`);
     const materialNames = await page.locator(".palette-material strong").allInnerTexts();
     assert(materialNames.join("|") === materials.join("|"), `Palette ${name} did not update its material preview`);
-    const imagePath = `/assets/images/garden/daylight-romantic${palette === "ivory-blush" ? "" : `-${palette}`}.webp`;
     const source = await page.locator(".studio-scene-image").getAttribute("src");
-    assert(source.includes(encodeURIComponent(imagePath)), `${name} did not select its own garden artwork`);
+    assert(source === imagePath, `${name} did not select its own garden artwork`);
     assert(await page.locator(".studio-palette-wash").count() === 0, "The old tint layer is still present");
     await page.locator(".studio-scene-image").evaluate(image => image.decode());
     await page.locator(".studio-art-frame").screenshot({ path: `output/playwright/palette-${palette}.png` });

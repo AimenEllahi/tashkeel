@@ -10,6 +10,7 @@ async (page) => {
     for (const [palette, floral] of [["Ivory & blush", "Romantic"], ["Marigold & burgundy", "Traditional"], ["Olive & antique gold", "Sculptural"]]) {
       await page.getByRole("button", { name: palette, exact: true }).click();
       await page.getByRole("button", { name: floral, exact: true }).click();
+      await page.waitForFunction(() => document.querySelector(".studio-art-frame")?.dataset.scene === document.querySelector(".studio-scene-image")?.getAttribute("src") && !document.querySelector(".studio-image-status"));
       const source = await page.locator(".studio-scene-image").getAttribute("src");
       await page.locator(".studio-scene-image").evaluate(image => image.decode());
       const width = await page.locator(".studio-scene-image").evaluate(image => image.naturalWidth);

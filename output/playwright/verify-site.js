@@ -56,11 +56,12 @@ async (page) => {
     for (const [label, value] of options) {
       await page.getByRole("button", { name: label, exact: true }).click();
       assert(await page.locator(".studio-art").getAttribute(`data-${attribute}`) === value, `${attribute} did not update`);
-      if (attribute === "palette") assert(await page.locator(`.studio-art-frame[data-palette='${value}']`).count() === 1, "Palette scene did not update");
       const selectedPalette = await page.locator(".studio-art").getAttribute("data-palette");
       const paletteSuffix = selectedPalette === "ivory-blush" ? "" : `-${selectedPalette}`;
       const scenePath = `/assets/images/garden/${await page.locator(".studio-art").getAttribute("data-ambience")}-${await page.locator(".studio-art").getAttribute("data-floral")}${paletteSuffix}.webp`;
-      assert((await page.locator(".studio-art .studio-scene-image").getAttribute("src")).includes(encodeURIComponent(scenePath)), `Garden image did not update to ${scenePath}`);
+      await page.locator(`.studio-art-frame[data-scene='${scenePath}']`).waitFor();
+      if (attribute === "palette") assert(await page.locator(`.studio-art-frame[data-palette='${value}']`).count() === 1, "Palette scene did not update");
+      assert((await page.locator(".studio-art .studio-scene-image").getAttribute("src")) === scenePath, `Garden image did not update to ${scenePath}`);
     }
   }
   for (const title of ["Invitations", "Floral details", "Wedding favors", "Tablescapes", "Stationery", "Guest experience"]) {

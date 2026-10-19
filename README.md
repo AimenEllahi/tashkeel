@@ -60,7 +60,7 @@ All layers share the same 900 × 1350 transparent canvas. Their source masters a
 
 `lib/hero-assets.ts` owns object paths, placement, reactions, and floating timings. Placement, entrance, and float transforms belong to separate wrappers. The earlier seated artwork is retained as a previous direction and is not mixed into the standing state map.
 
-The style-explorer images and garden setting are conceptual artwork, not real client events. The garden has 27 optimized views, with only the selected view loaded. The palette variants recolour depicted fabrics and décor while preserving the setting; they are concept art, not product-accurate fabric samples. Hafsa's source portrait is transformed into a watercolor and graphite illustration. The cabinet details and planning map are editable code-native illustrations. Raster masters and export tools are kept outside `public/`; only optimized exports ship to browsers.
+The style-explorer images and garden setting are conceptual artwork, not real client events. The garden has 27 pre-exported WebP views. The current view is displayed directly from static files; when the studio approaches the viewport, up to six adjacent choices are decoded in pairs for faster switching (skipped when Save-Data is enabled). The current image remains visible until the requested one is ready. The palette variants recolour depicted fabrics and décor while preserving the setting; they are concept art, not product-accurate fabric samples. Hafsa's source portrait is transformed into a watercolor and graphite illustration. The cabinet details and planning map are editable code-native illustrations. Raster masters and export tools are kept outside `public/`; only optimized exports ship to browsers.
 
 ## Verification
 
@@ -73,6 +73,7 @@ bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filen
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-all-links.js
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-mobile-flows.js
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-garden-variants.js
+bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-studio-switching.js
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-motion.js
 bash ~/.codex/skills/playwright/scripts/playwright_cli.sh --raw run-code --filename output/playwright/verify-board-motion.js
 ```

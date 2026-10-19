@@ -19,8 +19,9 @@ async (page) => {
         await page.getByRole("button", { name: lightName, exact: true }).click();
         const image = page.locator(".studio-scene-image");
         const expected = `/assets/images/garden/${light}-${floral}${palette === "ivory-blush" ? "" : `-${palette}`}.webp`;
+        await page.locator(`.studio-art-frame[data-scene='${expected}']`).waitFor();
         const src = await image.getAttribute("src");
-        assert(src.includes(encodeURIComponent(expected)), `Wrong scene for ${palette}/${floral}/${light}: ${src}`);
+        assert(src === expected, `Wrong scene for ${palette}/${floral}/${light}: ${src}`);
         const dimensions = await image.evaluate(async element => { await element.decode(); return [element.naturalWidth, element.naturalHeight]; });
         assert(dimensions[0] > 0 && dimensions[1] > 0, `Broken scene for ${palette}/${floral}/${light}`);
         checked.push(`${palette}/${floral}/${light}`);
@@ -36,7 +37,8 @@ async (page) => {
   await page.getByRole("combobox", { name: "Florals", exact: true }).selectOption("romantic");
   await page.getByRole("combobox", { name: "Time of day", exact: true }).selectOption("daylight");
   const mobileImage = page.locator(".studio-scene-image");
-  assert((await mobileImage.getAttribute("src")).includes(encodeURIComponent("/assets/images/garden/daylight-romantic-marigold-burgundy.webp")), "Mobile controls did not select the palette artwork");
+  await page.locator(".studio-art-frame[data-scene='/assets/images/garden/daylight-romantic-marigold-burgundy.webp']").waitFor();
+  assert((await mobileImage.getAttribute("src")) === "/assets/images/garden/daylight-romantic-marigold-burgundy.webp", "Mobile controls did not select the palette artwork");
   await mobileImage.evaluate(element => element.decode());
   await page.locator("#wedding-studio").screenshot({ path: "output/playwright/garden-mobile-selected.png", style: ".site-header,.skip-link,nextjs-portal{visibility:hidden!important}" });
   return { passed: true, combinations: checked.length, browserErrors: errors };

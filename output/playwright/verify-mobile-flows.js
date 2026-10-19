@@ -35,7 +35,8 @@ async (page) => {
     await page.getByRole("combobox", { name: "Florals", exact: true }).selectOption("sculptural");
     await page.getByRole("combobox", { name: "Time of day", exact: true }).selectOption("night");
     const artwork = page.locator(".studio-scene-image");
-    assert((await artwork.getAttribute("src")).includes(encodeURIComponent("/assets/images/garden/night-sculptural-olive-gold.webp")), `${width}px: garden controls did not compose`);
+    await page.locator(".studio-art-frame[data-scene='/assets/images/garden/night-sculptural-olive-gold.webp']").waitFor();
+    assert((await artwork.getAttribute("src")) === "/assets/images/garden/night-sculptural-olive-gold.webp", `${width}px: garden controls did not compose`);
     await artwork.evaluate(element => element.decode());
     for (const name of ["Invitations", "Floral details", "Wedding favors", "Tablescapes", "Stationery", "Guest experience"]) {
       await page.getByRole("button", { name: `Open ${name}`, exact: true }).click();

@@ -304,6 +304,7 @@ button { cursor: pointer; }
 .palette-choice[data-palette="marigold-burgundy"], .palette-materials[data-palette="marigold-burgundy"] { --palette-one: #c9822c; --palette-two: #7c2e46; --material-linen: #7c2e46; --material-accent: #c9822c; --material-metal: #b89758; }
 .palette-choice[data-palette="olive-gold"], .palette-materials[data-palette="olive-gold"] { --palette-one: #788354; --palette-two: #b89758; --material-linen: #788354; --material-accent: #f5f2eb; --material-metal: #c5aa6d; }
 .studio-scene-image { object-fit: cover; }
+.studio-image-status { position: absolute; right: .85rem; bottom: .85rem; padding: .4rem .65rem; border: 1px solid #b8975880; background: #f5f2ebe8; color: var(--charcoal); font-size: .72rem; }
 .art-caption { display: block; margin-top: .65rem; color: #706458; font-size: .7rem; letter-spacing: .04em; text-align: right; }
 .studio-controls { display: grid; gap: 1.5rem; align-self: center; }
 .studio-controls fieldset { min-width: 0; padding: 0 0 1.25rem; border: 0; border-bottom: 1px solid #b8975870; }
